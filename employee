@@ -1,0 +1,74 @@
+package employee;
+//成员 变量定义（public,private),类型，名字
+/*
+ * 为了实现封装性，通常将所有的成员变量修饰为private
+ * 如果外界需要要访问他们，则通过定义相关的public方法来实现
+ * 方法名一般定义为getXxxxx和setXxxx，修饰为public（Xxxx为成员变量名字，首字母大写）
+ */
+public class employee {
+	private String name;
+	private int id;
+	private String department;
+	private float baseSalary;
+
+//成员 方法定义
+/*
+ * 没有返回则使用void
+ * 名字（参数）{}
+ */
+
+
+/*
+ * 有一个特殊的方法：该方法成为构造方法
+ * 1.方法名和类名一致
+ * 2.没有任何返回修饰
+ * 3.自动新建一个对象被调用，一般用于成员变量的初始化
+ * 4.可以有多个：重载，名字一样，但是参数不一样。
+ * 5.
+ */
+public employee() {
+	
+}
+public employee(String name,int id,String deString,float baseSalary) {
+this.name=name;
+this.id=id;
+this.department=department;
+this.baseSalary=baseSalary;
+}
+public void updateSalary() {
+	this.baseSalary=1.035f*this.baseSalary;
+}
+public void getName() {
+	 this.name=name;
+}
+public float getBaseSalary() {
+	return this.baseSalary;
+}
+public void displayEmployee() {
+	String info="";
+	info="id="+this.id+"name="+this.name+"baseSalary="+this.baseSalary;
+	System.out.println(info);
+}
+}
+package employee;
+
+
+public class EmployeeDriver {
+public static void main(String[]args) {
+	/*
+	 * 1.创建对象new*/
+	
+	employee emp1=new employee("john",1002,"财务",2500);
+	employee emp2=new employee("tom", 1001,"销售",2000);
+	
+		 /* 2.访问成员（变量或方法)运动符号
+	 */
+	float oldSalary=emp1.getBaseSalary();
+	System.out.println("员工1工资为"+oldSalary);
+	emp1.updateSalary();
+	float newSalary=emp1.getBaseSalary();
+	System.out.println("加薪后员工1工资为"+newSalary);
+	//emp1.department="销售"; 该行错误：
+	emp1.displayEmployee();
+}
+}
