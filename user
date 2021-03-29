@@ -1,0 +1,52 @@
+package user;
+
+public class user {
+private String password,username;
+public static int usernum=0;
+
+public user() {
+	
+}
+public user(String username) {
+	this.username=username;
+	usernum++;
+}
+public user(String username,String password) {
+	this.username=username;
+	this.password=password;
+	usernum++;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public String getUsername() {
+	return username;
+}
+public void setUsername(String username) {
+	this.username = username;
+	usernum++;
+}
+public int getusernum() {
+	return usernum;
+}
+public void print() {
+	System.out.println("  username:"+username+"  password:"+password+"  usernum:"+usernum);
+}
+
+}
+package user;
+
+public class usertest {
+public static void main(String[]a) {
+	user u1=new user();
+	user u2=new user("chengmingzhou2","456");
+	u1.setUsername("chengmingzhou");
+	u1.setPassword("123");
+	u1.getPassword();
+	u1.print();
+	u2.print();
+}
+}
