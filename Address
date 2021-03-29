@@ -1,0 +1,24 @@
+package address;
+
+public class address {
+private String countries,provinces,city,street,zip,complete;
+public address(String countries,String provinces,String city,String street,String zip){
+	this.countries=countries;
+	this.provinces=provinces;
+	this.city=city;
+	this.street=street;
+	this.zip=zip;
+	complete=countries+ " "+provinces+" "+ city+" "+ street+" "+ zip;
+}
+public String complete() {
+	return this.complete;
+}
+}
+package address;
+
+public class addressTest {
+public static void main(String[]a) {
+	address ad1=new address("china","Yunnan","yuxi","hongta","653100");
+	System.out.println(ad1.complete());
+}
+}
